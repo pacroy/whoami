@@ -6,7 +6,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-  - match: Host(`microk8s.ddns.net`) && PathPrefix(`/whoami`)
+  - match: Host(`your.dnsname.com`) && PathPrefix(`/whoami`)
     kind: Rule
     services:
     - name: whoami

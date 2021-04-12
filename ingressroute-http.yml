@@ -6,7 +6,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`microk8s.ddns.net`) && PathPrefix(`/whoami`)
+  - match: Host(`your.dnsname.com`) && PathPrefix(`/whoami`)
     kind: Rule
     middlewares:
       - name: redirect-to-https
