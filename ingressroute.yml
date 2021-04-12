@@ -6,7 +6,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`*`) && PathPrefix(`/whoami`)
+  - match: Host(`microk8s.ddns.net`) && PathPrefix(`/whoami`)
     kind: Rule
     services:
     - name: whoami
