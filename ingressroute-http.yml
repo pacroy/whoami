@@ -10,6 +10,7 @@ spec:
     kind: Rule
     middlewares:
       - name: redirect-to-https
+        namespace: default
     services:
     - name: whoami
       port: 80
