@@ -1,14 +1,13 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: whoami-ingress
-
+  name: whoami
 spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`microk8s.ddns.net`)
-      kind: Rule
-      services:
-        - name: whoami
-          port: 80
+  - match: Host(`*`) && PathPrefix(`/whoami`)
+    kind: Rule
+    services:
+    - name: whoami
+      port: 80
