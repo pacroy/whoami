@@ -10,7 +10,7 @@ spec:
         pathType: Exact
         backend:
           service:
-            name: whoami-service
+            name: whoami
             port:
               number: 80
               
