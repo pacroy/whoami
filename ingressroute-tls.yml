@@ -1,0 +1,15 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: whoami-tls
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`microk8s.ddns.net`) && PathPrefix(`/whoami`)
+    kind: Rule
+    services:
+    - name: whoami
+      port: 80
+  tls:
+    certResolver: letsencrypt
