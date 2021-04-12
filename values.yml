@@ -1,5 +1,5 @@
 additionalArguments:
-  - --certificatesresolvers.letsencrypt.acme.tlschallenge
+  - --certificatesresolvers.letsencrypt.acme.tlschallenge=true
   - --certificatesresolvers.letsencrypt.acme.email=youremail@domain.com
   - --certificatesresolvers.letsencrypt.acme.storage=acme.json
   
