@@ -46,7 +46,7 @@ kubectl apply -f ingressroute.yml -n whoami
 
 Forward HTTP traffic to HTTPS using [Traefik's middleware](https://doc.traefik.io/traefik/middlewares/overview/) and use [Traefik's TLSOption](https://doc.traefik.io/traefik/https/tls/#tls-options) to enforce TLS v1.2+ for HTTPS.
 
-Install Traefik with a TLS challenge certificate resolver.
+Install Traefik with a TLS challenge certificate resolver using [Tarefik Helm chart](https://github.com/traefik/traefik-helm-chart).
 
 ```sh
 helm repo add traefik https://helm.traefik.io/traefik
