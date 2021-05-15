@@ -1,5 +1,9 @@
 additionalArguments:
+  - --certificatesresolvers.letsencrypt.acme.email=youremail@domain.com
+  - --certificatesresolvers.letsencrypt.acme.storage=/data/letsencrypt.json
+  - --certificatesresolvers.letsencrypt.acme.dnschallenge=true
   - --certificatesresolvers.letsencrypt.acme.dnschallenge.provider=azure
+  - --certificatesresolvers.letsencrypt.acme.dnschallenge.resolvers=your.dns-server-1.com:53,your.dns-server-2.com:53
   - --certificatesresolvers.letsencrypt.acme.dnschallenge.delaybeforecheck=0
 env:
   - name: AZURE_CLIENT_ID
