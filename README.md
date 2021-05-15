@@ -58,7 +58,7 @@ helm install traefik traefik/traefik -n traefik --values values.yml
 Create IngressRoute, Middleware, and TLSOption.
 
 ```sh
-kubectl apply ingressroute-tls.yml -n whoami
+kubectl apply -f ingressroute-tls.yml -n whoami
 kubectl apply -f tlsoption.yml
 kubectl apply -f middleware-https.yml
 kubectl apply -f ingressroute-http.yml -n whoami
