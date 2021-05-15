@@ -36,7 +36,7 @@ c. Using [ingress-nginx](https://github.com/kubernetes/ingress-nginx/) (requires
 apply -f ingress-nginx.yml -n whoami
 ```
 
-d. Using [Traefik](https://traefik.io/)'s IngressRoute (requires a [certificate resolver](https://doc.traefik.io/traefik/https/acme/#certificate-resolvers)):
+d. Using [Traefik's IngressRoute](https://doc.traefik.io/traefik/user-guides/crd-acme/#traefik-routers) (requires a [certificate resolver](https://doc.traefik.io/traefik/https/acme/#certificate-resolvers)):
 
 ```
 kubectl apply -f ingressroute.yml -n whoami
@@ -45,6 +45,17 @@ kubectl apply -f ingressroute.yml -n whoami
 ### Securing Traffic
 
 Forward HTTP traffic to HTTPS using [Traefik's middleware](https://doc.traefik.io/traefik/middlewares/overview/) and use [Traefik's TLSOption](https://doc.traefik.io/traefik/https/tls/#tls-options) to enforce TLS v1.2+ for HTTPS.
+
+Install Traefik with a TLS challenge certificate resolver.
+
+```sh
+helm repo add traefik https://helm.traefik.io/traefik
+helm repo update
+kubectl create namespace traefik
+helm install traefik traefik/traefik -n traefik --values values.yml
+```
+
+Create IngressRoute, Middleware, and TLSOption.
 
 ```sh
 kubectl apply ingressroute-tls.yml -n whoami
