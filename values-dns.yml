@@ -16,3 +16,6 @@ env:
     value: ''
   - name: AZURE_RESOURCE_GROUP
     value: ''
+logs:
+  general:
+    level: info
