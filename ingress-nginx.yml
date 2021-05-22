@@ -9,18 +9,18 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: whoami.uat.par.sh
+  - host: your.domain.com
     http:
       paths:
       - path: /
         pathType: ImplementationSpecific
         backend:
           service:
-            name: whoami-service
+            name: whoami
             port:
               number: 80
   tls:
   - hosts:
-    - whoami.uat.par.sh
+    - your.domain.com
     secretName: whoami
     
